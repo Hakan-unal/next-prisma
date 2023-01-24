@@ -40,7 +40,9 @@ export default Blog
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/api/user')
+  const address = `api/user`;
+
+  const res = await axios.get(address).then((res) => res.data)
   const feed = await res.json()
   console.log(feed)
 
