@@ -40,15 +40,15 @@ export default Blog
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const address = `/api/user`;
+  // const address = `/api/user`;
 
-  const res = await axios.get(address).then((res) => res.data)
-  const feed = await res.json()
-  console.log(feed)
+  // const res = await axios.get(address).then((res) => res.data)
+  // const feed = await res.json()
+  // console.log(feed)
 
 
   return {
-    props: { feed: feed.data },
+    props: { feed: [] },
     revalidate: 10
   }
 }
