@@ -40,15 +40,15 @@ export default Blog
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const address = `/api/user`;
+  const address = `https://next-prisma-7vqhmeew2-hakan-unal.vercel.app/api/user`;
 
-  // const res = await axios.get(address).then((res) => res.data)
-  // const feed = await res.json()
-  // console.log(feed)
+  const res = await axios.get(address).then((res) => res.data)
+
+  console.log(res)
 
 
   return {
-    props: { feed: [] },
+    props: { feed: res.data },
     revalidate: 10
   }
 }
