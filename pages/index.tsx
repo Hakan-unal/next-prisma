@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 
   return {
-    props: { feed: res.data },
+    props: { feed: res.data || [] },
     revalidate: 10
   }
 }
