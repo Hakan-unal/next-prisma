@@ -36,7 +36,7 @@ export default Blog
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const address = `https://next-prisma-lemon.vercel.app//api/user`;
+  const address = `https://next-prisma-lemon.vercel.app/api/user`;
 
   const res = await axios.get(address).then((res) => res.data)
 
