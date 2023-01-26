@@ -15,7 +15,7 @@ type Props = {
 const Blog: React.FC<Props> = (props) => {
 
   console.log(props)
-  const address = `api/user`;
+  const address = `https://next-prisma-lemon.vercel.app/api/user`;
   const fetcher = async (url) => await axios.post(url, { name: 'Bob' + Math.random() }).then((res) => res.data);
   // const fetcher = async (url) => await axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(address, fetcher);
