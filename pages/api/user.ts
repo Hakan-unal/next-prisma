@@ -15,6 +15,7 @@ const userCreate = async (data) => {
 
 const userList = async () => {
     try {
+        console.log("asasdas")
         const users = await prisma.user.findMany()
         return users
     }
@@ -39,8 +40,10 @@ const postMethod = async (req) => {
 }
 
 const getMethod = async () => {
+    console.log("akshgdjkhasdghjkasd")
     try {
         const res = await userList()
+        console.log("res:", res)
         return res
     }
     catch (err) {
@@ -62,7 +65,9 @@ export default async function handler(req, res) {
 
         case "GET":
             const getResult = await getMethod()
+            console.log("ahjksdgahjsdg")
             if (getResult) {
+                console.log("   adhaskdhasd")
                 res.status(200).json({ message: "Success get method", data: getResult });
             } else {
                 res.status(400).json({ message: getResult });
